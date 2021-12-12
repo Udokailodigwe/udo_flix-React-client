@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {MainView} from './components/main-view/main-view'; //import mainview component from mainview.jsx
+
+
 
 //bundle index.scss through its imported file
 import './index.scss';
 
 //main component
 class udo_flixApplication extends React.Component{
-   render(){
-      return (
-         <div className = 'udo-flix'>
-            <div> Good morning</div>
-            <p class = 'udo-flix1'>welcome to my first ever React project</p>
-         </div>
+   render() {
+   return (
+         <MainView />
       );
    }
 }
