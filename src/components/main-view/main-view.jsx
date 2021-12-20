@@ -1,20 +1,29 @@
 import React from 'react';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-
+import axios from 'axios';
 
 export class MainView extends React.Component{
    constructor(){ //initializing the .state values
       super(); //calling the constructor of this class component
       this.state = { //temporarily holds moviedata that will  be reused
-         movies: [
-         { _id: 1, Title: 'Inception', Description: 'desc1...', Director: 'Shonda Rhimes', ImagePath: '...'},
-         { _id: 2, Title: 'The Shawshank Redemption', Description: 'desc2...', Director: 'Curtis Jackson', ImagePath: '...'},
-         { _id: 3, Title: 'Gladiator', Description: 'desc3...', Director: 'Joe Crux', ImagePath: '...'}
-      ],
+         movies: [ ],
          selectedMovie: null //notifies the app that no moviecard was clicked
    };
 }
+
+componentDidMount(){
+   axios.get('https://udo-flix.herokuapp.com/movies')
+      .then(response => {
+         this.setState({
+            movies: response.data
+         });
+      })
+      .catch(error => {
+         console.log(error);
+      });
+}
+
 
    setSelctedMovie(newSelectedMovie){
       this.setState({selectedMovie:newSelectedMovie
