@@ -1,6 +1,15 @@
 import React from 'react';
 
 export class MovieView extends React.Component {
+
+
+componentDidMount() {
+   document.addEventListener('keypress', event => {
+      console.log(event.key);
+   });
+}
+
+
    render() {
       const {movieData, onBackClick} = this.props; //mapped object used as props from mainview components
          return( 
@@ -24,4 +33,9 @@ export class MovieView extends React.Component {
          </div> 
       );
    }
-} 
+}
+
+
+
+
+
