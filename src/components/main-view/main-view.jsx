@@ -13,16 +13,18 @@ export class MainView extends React.Component{
 }
 
 componentDidMount(){
-   axios.get('https://udo-flix.herokuapp.com/movies')
-      .then(response => {
-         this.setState({
-            movies: response.data
-         });
-      })
-      .catch(error => {
-         console.log(error);
-      });
+  axios.get('https://udo-flix.herokuapp.com/movies')
+  .then(response => {
+    // Assign the result to the state
+    this.setState({
+      movies: response.data
+    });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 }
+
 
 
    setSelctedMovie(newSelectedMovie){
