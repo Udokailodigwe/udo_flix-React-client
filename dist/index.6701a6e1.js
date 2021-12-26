@@ -25634,10 +25634,10 @@ var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
     //store fields with updated fields for reuse in form  
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [birthday, setBirthday] = useState('');
+    const [username, setUsername] = _react.useState('');
+    const [password, setPassword] = _react.useState('');
+    const [email, setEmail] = _react.useState('');
+    const [birthday, setBirthday] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
         _axiosDefault.default.post('https://udo-flix.herokuapp.com/users', {
