@@ -1,5 +1,8 @@
+import './movie-view.scss';
+
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Card, Container, Button } from 'react-bootstrap';
 
 export class MovieView extends React.Component {
 
@@ -19,34 +22,31 @@ export class MovieView extends React.Component {
    render() {
       const { movieData, onBackClick } = this.props; //mapped object used as props from mainview components
       return (
-         <div className="movie-view">
-            <div className="movie-poster">
-               <img src={movieData.imagepath} />
-            </div>
-            <div className="movie-title">
-               <span className="lable"> Title: </span>
-               <span className="value">{movieData.title}</span>
-            </div>
-            <div className="movie-description">
-               <span className="label">Description: </span>
-               <span className="value">{movieData.description}</span>
-            </div>
-            <div className="movie-director">
-               <span className="label">Actor: </span>
-               <span className="value">{movieData.actors}</span>
-            </div>
-            <div className="movie-director">
-               <span className="label">Released Year: </span>
-               <span className="value">{movieData.releasedyear}</span>
-            </div>
-            <button onClick={() => { onBackClick(null); }}> Back </button>
-         </div>
+         <Container>
+            <Card text="light" bg="dark" className="card-movieview">
+               <img variant="top" src={movieData.imagepath} />
+               <Card.Title>
+                  TITLE: {movieData.title}
+               </Card.Title>
+               <Card.Text>
+                  DESCRIPTION: {movieData.description}
+               </Card.Text>
+               <Card.Text>
+                  ACTOR: {movieData.actors}
+               </Card.Text>
+               <Card.Text>
+                  RELEASED YEAR: {movieData.releasedyear}
+               </Card.Text>
+            </Card>
+            <Button size="md" variant="danger" onClick={() => { onBackClick(null); }}> Back </Button>
+
+         </Container >
       );
    }
 }
 
 MovieView.propTypes = {
-   movie: PropTypes.shape({
+   movieData: PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       imagepath: PropTypes.string.isRequired,
@@ -57,10 +57,10 @@ MovieView.propTypes = {
       director: PropTypes.shape({
          name: PropTypes.string.isRequired,
          bio: PropTypes.string.isRequired,
-         birth: PropTypes.date
+         birth: PropTypes.string
       }),
       actors: PropTypes.array,
-      releasedyear: PropTypes.date,
+      releasedyear: PropTypes.string
    }).isRequired,
    onBackClick: PropTypes.func.isRequired
 };

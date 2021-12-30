@@ -1,14 +1,5 @@
-$color: chocolate;
-$color1: rgb(114, 186, 13);
+   $color:crimson;
 
-
-.udo-flix{
-   color: $color;
-   font-size: xx-large;
-
-}
-.udo-flix1{
-   color: $color1;
-   font-size: xx-large;
-
+.app-container{
+   background: $color;
 }
