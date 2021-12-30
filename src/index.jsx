@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {MainView} from './components/main-view/main-view'; //import mainview component from mainview.jsx
+import { MainView } from './components/main-view/main-view'; //import mainview component from mainview.jsx
+import Container from 'react-bootstrap/Container';
 
 
 
@@ -8,10 +9,12 @@ import {MainView} from './components/main-view/main-view'; //import mainview com
 import './index.scss';
 
 //main component
-class udo_flixApplication extends React.Component{
+class udo_flixApplication extends React.Component {
    render() {
-   return (
-         <MainView />
+      return (
+         <Container>
+            <MainView />
+         </Container>
       );
    }
 }
