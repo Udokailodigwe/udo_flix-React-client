@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Form from 'react-bootstrap/Form';
 import { Button, Form, Container, Nav, Navbar, Badge, Card } from 'react-bootstrap';
 import Images1 from '../image/image1.jpg';
 import Images2 from '../image/image2.jpg';
