@@ -3,19 +3,22 @@ import './movie-card.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 export class MovieCard extends React.Component {
    render() {
-      const { movieData, onMovieClick } = this.props; //mapped object used as props from mainview components
+      const { movie } = this.props; //mapped object used as props from mainview components
 
       return (
          <Container>
             <Card bg="dark" text="light" className="card-moviecard">
-               <Card.Img variant="top" src={movieData.imagepath} />
+               <Card.Img variant="top" src={movie.imagepath} />
                <Card.Body>
-                  <Card.Title>{movieData.title}</Card.Title>
-                  <Card.Text>{movieData.description}</Card.Text>
-                  <Button size="sm" onClick={() => onMovieClick(movieData)} variant="danger">Watch Movie</Button>
+                  <Card.Title>{movie.title}</Card.Title>
+                  <Link to={`/movies/${movie._id}`}>
+                     <Button size="sm" variant="link">Watch Movie</Button>
+                  </Link>
                </Card.Body>
             </Card>
          </Container>
@@ -25,7 +28,7 @@ export class MovieCard extends React.Component {
 }
 
 MovieCard.propTypes = {
-   movieData: PropTypes.shape({
+   movie: PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       imagepath: PropTypes.string.isRequired,
@@ -41,5 +44,4 @@ MovieCard.propTypes = {
       actors: PropTypes.array,
       releasedyear: PropTypes.string.isRequired
    }).isRequired,
-   onMovieClick: PropTypes.func.isRequired
 };
