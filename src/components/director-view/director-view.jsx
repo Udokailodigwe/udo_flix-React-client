@@ -2,24 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Container, Col, Row } from 'react-bootstrap';
 
-export function DirectorView(movie, onBackClick) {
+import './director-view.scss';
+
+export function DirectorView({ director, onBackClick }) {
+    console.log(director)
     return (
-        <Container>
-            <Row>
+        <Container className="text-light">
+            <Row className="directorview">
                 <Col className="label">Director name: </Col>
-                <Col className="value">{movie.director[0].name} </Col>
+                <Col className="value">{director.name} </Col>
             </Row>
-            <Row>
+            <Row className="directorview">
                 <Col className="label">Bio: </Col>
-                <Col className="value">{movie.director[0].bio} </Col>
+                <Col className="value">{director.bio} </Col>
             </Row>
-            <Row>
+            <Row className="directorview">
                 <Col className="label">Birth year: </Col>
-                <Col className="value">{movie.director[0].birth} </Col>
-            </Row>
-            <Row>
-                <Col className="label">Death year: </Col>
-                <Col className="value">{movie.director[0].death} </Col>
+                <Col className="value">{director.birth} </Col>
             </Row>
             <br />
             <Button className="text-center" size="sm" variant="dark" type='submit' onClick={() => { onBackClick(null); }}>Back</Button>
