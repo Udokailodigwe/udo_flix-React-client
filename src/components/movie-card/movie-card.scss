@@ -1,4 +1,13 @@
 .card-moviecard{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
+    overflow:hidden;
+}
+
+.card-image{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-body{
+    background-color: black;
 }
