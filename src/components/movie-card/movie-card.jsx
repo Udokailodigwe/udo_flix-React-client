@@ -2,7 +2,7 @@ import './movie-card.scss';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Button, Container } from 'react-bootstrap';
+import { Card, Button, Container, CardGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -11,16 +11,20 @@ export class MovieCard extends React.Component {
       const { movie } = this.props; //mapped object used as props from mainview components
 
       return (
-         <Container>
-            <Card bg="dark" text="light" className="card-moviecard">
-               <Card.Img variant="top" src={movie.imagepath} />
-               <Card.Body>
-                  <Card.Title>{movie.title}</Card.Title>
-                  <Link to={`/movies/${movie._id}`}>
-                     <Button size="sm" variant="link">Watch Movie</Button>
-                  </Link>
-               </Card.Body>
-            </Card>
+         <Container className="card-moviecard mb-2 ">
+            <CardGroup>
+
+               <Card className="  text-white mb-2" >
+                  <Card.Img variant="top" src={movie.imagepath} className="card-image" />
+                  <Card.Body className="card-body">
+                     <Card.Title className="card-title">{movie.title}</Card.Title>
+                     <Link to={`/movies/${movie._id}`}>
+                        <Button size="sm" variant="link" className="card-button">Watch Movie</Button>
+                     </Link>
+                  </Card.Body>
+               </Card>
+            </CardGroup>
+
          </Container>
 
       );
