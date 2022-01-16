@@ -1,3 +1,6 @@
+ $color1:#f5f5f5;
+ $color2:#dc143c;
+
 .nav-collapse{
     position: relative;
     top: 16px;
@@ -6,15 +9,25 @@
 .logout_button{
     position: relative;
     top: -7px;
-    text-decoration: none;   
+    text-decoration: none;  
+    background: $color2;
+    color: $color1; 
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 12px;
+    height: 30px;
+
 }
 .brand{
     position: relative;
     bottom:18px;
 }
 .login-signup, p{
-    color: whitesmoke;
+    color: $color1;
 }
 .user{
-    color:whitesmoke
+    color:$color1
+}
+.navlink{
+    margin: 6px;
 }
