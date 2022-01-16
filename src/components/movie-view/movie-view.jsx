@@ -2,51 +2,53 @@ import './movie-view.scss';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Container, Button } from 'react-bootstrap';
+import { Row, Button, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export class MovieView extends React.Component {
 
-   //creating keypress component for callbacks to add and removing events
-   // keypressCallback(event) {
-   //    console.log(event.key);
-   // }
-
-   // componentDidMount() {
-   //    document.addEventListener('keypress', this.keypressCallback);
-   // }
-
-   // componentWillUnmount() {
-   //    document.removeEventListener('keypress', this.keypressCallback);
-   // }
-
    render() {
-      const { movieData, onBackClick } = this.props; //mapped object used as props from mainview components
+      const { movie, onBackClick } = this.props; //mapped object used as props from mainview components
       return (
-         <Container>
-            <Card text="light" bg="dark" className="card-movieview">
-               <img variant="top" src={movieData.imagepath} />
-               <Card.Title>
-                  TITLE: {movieData.title}
-               </Card.Title>
-               <Card.Text>
-                  DESCRIPTION: {movieData.description}
-               </Card.Text>
-               <Card.Text>
-                  ACTOR: {movieData.actors}
-               </Card.Text>
-               <Card.Text>
-                  RELEASED YEAR: {movieData.releasedyear}
-               </Card.Text>
-            </Card>
-            <Button size="md" variant="danger" onClick={() => { onBackClick(null); }}> Back </Button>
+         <div className="movie_view text-light">
+            <Row className="justify-content-md-center">
+               <img src={movie.imagepath} className="movieview-image" />
+            </Row>
+            <Row className="movieview-detail">
+               <Col>Title:</Col>
+               <Col xs={12} md={8}>{movie.title}</Col>
+            </Row>
 
-         </Container >
+            <Row className="movieview-detail">
+               <Col>DESCRIPTION: </Col>
+               <Col xs={12} md={8}>{movie.description}</Col>
+            </Row>
+            <Row className="movieview-detail">
+               <Link to={`/director/${movie.director.name}`}>
+                  <Button variant="link">Director</Button>
+               </Link>
+            </Row>
+            <Row className="movieview-detail">
+               <Link to={`/genre/${movie.genre.name}`}>
+                  <Button variant="link">Genre</Button>
+               </Link>
+            </Row>
+            <Row className="movieview-detail">
+               <Col>ACTOR:</Col>
+               <Col xs={12} md={8}>{movie.actors}</Col>
+            </Row>
+            <Row className="movieview-detail">
+               <Col>RELEASED YEAR:</Col>
+               <Col xs={12} md={8}>{movie.releasedyear}</Col>
+            </Row>
+            <Button xs={12} md={8} size="md" variant="light" onClick={() => { onBackClick(); }}> Back </Button>
+         </div >
       );
    }
 }
 
 MovieView.propTypes = {
-   movieData: PropTypes.shape({
+   movie: PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       imagepath: PropTypes.string.isRequired,

@@ -32,23 +32,19 @@ export function NavbarView({ user }) {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <NavItem>
+                        <NavItem className="navlink">
                             {isAuth() && (
-                                <Nav.Link>
-                                    <Link to={`/users/:username`} href="#"><p>Your Profile</p></Link>
-                                </Nav.Link>
+                                <Link to={`/users/${user}`} href="#"><p>Your Profile</p></Link>
                             )}
                         </NavItem>
-                        <NavItem >
+                        <NavItem className="navlink">
                             {isAuth() && (
-                                <Nav.Link >
-                                    <p>Welcome: <Link to={`/users/:username`}><span className="user">{user}</span></Link></p>
-                                </Nav.Link >
+                                <p>Welcome: <Link to={`/users/${user}`}><span className="user">{user}</span></Link></p>
                             )}
                         </NavItem>
-                        <Nav.Link>
+                        <Nav.Link >
                             {isAuth() && (
-                                <Button className="logout_button" size="md" variant="dark" text="light" onClick={() => { this.onLoggedOut() }} ><p>Logout</p></Button>
+                                <button className="logout_button" size="md" variant="dark" text="light" onClick={() => { this.onLoggedOut() }} ><p>Logout</p></button>
                             )}
                         </Nav.Link>
                         <NavItem>

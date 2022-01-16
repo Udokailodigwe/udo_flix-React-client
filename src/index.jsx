@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MainView } from './components/main-view/main-view'; //import mainview component from mainview.jsx
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
 
 
 

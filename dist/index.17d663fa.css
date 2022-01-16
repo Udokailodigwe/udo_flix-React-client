@@ -1,9 +1,20 @@
-.main-view {
-  background: black;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .card-moviecard {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
+  overflow: hidden;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  background-color: black;
 }
 .card-movieview {
   font-family: "Times New Roman", Times, serif;
@@ -12,7 +23,82 @@
   font-size: 16px;
   text-align: justify;
 }
+
+.movie_view {
+  background: black;
+}
+
+.movieview-detail {
+  padding: 7px;
+}
+
+.movieview-image {
+  width: 80%;
+}
+#formUsername {
+  margin-bottom: 20px;
+}
+
+.login-button {
+  background: crimson;
+  padding: 10px;
+  border-radius: 12px;
+  height: 40px;
+  color: whitesmoke;
+}
+
+.regieter-link {
+  position: relative;
+  left: 35px;
+}
+.genreview {
+  background: black;
+}
+.directorview {
+  background: black;
+}
+.nav-collapse {
+  position: relative;
+  top: 16px;
+}
+
+.logout_button {
+  position: relative;
+  top: -7px;
+  text-decoration: none;
+  background: #dc143c;
+  color: #f5f5f5;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 12px;
+  height: 30px;
+}
+
+.brand {
+  position: relative;
+  bottom: 18px;
+}
+
+.login-signup, p {
+  color: #f5f5f5;
+}
+
+.user {
+  color: #f5f5f5;
+}
+
+.navlink {
+  margin: 6px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .app-container {
   background: crimson;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
 }
 /*# sourceMappingURL=index.17d663fa.css.map */

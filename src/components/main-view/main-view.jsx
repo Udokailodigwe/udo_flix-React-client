@@ -82,7 +82,7 @@ export class MainView extends React.Component {
             <br />
             <br />
             <br />
-            <Row className="main-view justify-content-md-center">
+            <Row className="main-view justify-content-center">
 
                {/*main movie view*/}
                <Route exact path="/" render={() => {
@@ -111,7 +111,7 @@ export class MainView extends React.Component {
                      <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
                   </Col>
                   if (movies.length === 0) return <div className="main-view" />;
-                  return <Col md={8}>
+                  return <Col md={8} >
                      <MovieView movie={movies.find(m => m._id === match.params.id)}
                         onBackClick={() => history.goBack()} />
                   </Col>
@@ -141,13 +141,13 @@ export class MainView extends React.Component {
                   </Col>
                }} />
                {/*profile view*/}
-               <Route path={`/users/:username`} render={({ match, history }) => {
+               <Route path={`/users/:user`} render={({ match, history }) => {
                   if (!user) return <Col>
                      <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
                   </Col>
                   if (movies.length === 0) return <div className="main-view" />;
-                  return <Col md={8}>
-                     <ProfileView movies={movies} user={user === match.params.username}
+                  return <Col>
+                     <ProfileView movies={movies} user={user === match.params.user}
                         history={history}
                         onBackClick={() => history.goBack()} removeFavorite={(_id) => this.removeFavorite(_id)} />
                   </Col>

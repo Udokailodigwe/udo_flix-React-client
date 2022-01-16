@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
-
 import { Button, Form, Container, Nav, Navbar, Badge, Card } from 'react-bootstrap';
 import Images1 from '../image/image1.jpg';
 import Images2 from '../image/image2.jpg';
 import Images3 from '../image/image3.jpg';
+
+import './login-view.scss';
 
 export function LoginView(props) {
     //store fields with updated fields for reuse in form  
@@ -59,7 +60,7 @@ export function LoginView(props) {
     };
 
     return (
-        <div className="login-view">
+        <div className="login-view text-light">
             <Container fluid variant="dark" className="container-login">
                 <Card>
                     <Card.Body>
@@ -79,12 +80,12 @@ export function LoginView(props) {
                                 {passwordErr && <p>{passwordErr}</p>}
                             </Form.Group>
                             <br />
-                            <Button className="text-center" size="sm" variant="dark" type='submit' onClick={handleSubmit}>Submit</Button>
+                            <button className="login-button" size="sm" type='submit' onClick={handleSubmit}>Submit</button>
+                            <span className="regieter-link" > Don't have an account?
+                                <a href="/register" > Register Here</a>
+                            </span>
                         </Form>
                     </Card.Body>
-                    <Card.Footer className="text-center"> Don't have an account?
-                        <Card.Link href="/register"> Register Here</Card.Link>
-                    </Card.Footer>
                 </Card>
                 <Card.Img src={Images1} style={{ width: "22.5rem", height: "20rem" }} alt="movie images" />
                 <Card.Img src={Images2} style={{ width: "22.5rem", height: "20rem" }} alt="movie images" />

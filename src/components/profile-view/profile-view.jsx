@@ -3,6 +3,10 @@ import axios from 'axios';
 import { UserInfo } from './user-info';
 import { FavoriteMovies } from './favorite-movies';
 import { UpdateUser } from './update-user';
+import { Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+
+
+
 export class ProfileView extends React.Component {
     constructor() {
         super();
@@ -16,7 +20,7 @@ export class ProfileView extends React.Component {
     }
 
     componentDidMount() {
-        let accessToken = LocalStorage.getItem('token');
+        let accessToken = localStorage.getItem('token');
         if (accessToken !== null) {
             this.setState({
                 user: localStorage.getItem('user')
@@ -27,7 +31,7 @@ export class ProfileView extends React.Component {
 
     getUser = (token) => {
         const username = localStorage.getItem('user');
-        axios.get('https://udo-flix.herokuapp.com/users/${username}', {
+        axios.get(`https://udo-flix.herokuapp.com/users/${username}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((response) => {
@@ -116,21 +120,43 @@ export class ProfileView extends React.Component {
                 console.log(error);
             });
     }
-
+    handleSubmit(data) {
+        console.log('submitted')
+    }
     render() {
 
-        const { users, favoriteMovies, username } = this.state;
+        const { username, password, email, birthday, favoriteMovies } = this.state;
 
 
         return (
-            <div>
-                <UserInfo name={users.username} email={users.email} birthday={users.birthday} favoriteMovies={users.favoriteMovies} password={users.password} />
-                <FavoriteMovies favoriteMovies={favoriteMovies} />
-                <UpdateUser handleSubmit={handleSubmit} handleUpdate={handleUpdate} />
+            <Container>
+                <Row>
+                    <Col xs={12} sm={4} >
+                        <Card bg="dark" text="light">
+                            <Card.Header>Your Information</Card.Header>
+                            <Card.Body>
+                                <UserInfo name={username} email={email} birthday={birthday} favoriteMovies={favoriteMovies} password={password} />
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col className="mb-3" xs={12} sm={8}>
+                        <Card bg="dark" text="light">
+                            <Card.Header>Edit Your Information</Card.Header>
 
-            </div >
-
-
+                            <Card.Body>
+                                <UpdateUser user={this.state} handleSubmit={(user) => this.handleSubmit(user)} handleUpdate={(user) => this.handleUpdate(user)} />
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Card bg="dark" text="light">
+                            <FavoriteMovies favoriteMovies={favoriteMovies} removeFavorite={(item) => this.removeFavorite(item)} />
+                        </Card>
+                    </Col>
+                </Row>
+            </Container >
         );
     }
 
