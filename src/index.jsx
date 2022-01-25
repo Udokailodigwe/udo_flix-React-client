@@ -1,20 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MainView } from './components/main-view/main-view'; //import mainview component from mainview.jsx
+import MainView from './components/main-view/main-view';
 import { Container } from 'react-bootstrap';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import movieApp from './reducers/reducers';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 
 
 //bundle index.scss through its imported file
 import './index.scss';
 
+const store = createStore(movieApp, devToolsEnhancer());
+
 //main component
 class udo_flixApplication extends React.Component {
    render() {
       return (
-         <Container>
-            <MainView />
-         </Container>
+         <Provider store={store}>
+            <Container>
+               <MainView />
+            </Container>
+         </Provider>
       );
    }
 }
