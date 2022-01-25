@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
-import { Button, Form, Container, Nav, Navbar, Badge, Card } from 'react-bootstrap';
-import Images1 from '../image/image1.jpg';
-import Images2 from '../image/image2.jpg';
-import Images3 from '../image/image3.jpg';
+import { connect } from 'react-redux';
+import { Stack, Form, Col } from 'react-bootstrap';
 
 import './login-view.scss';
 
@@ -60,47 +57,41 @@ export function LoginView(props) {
     };
 
     return (
-        <div className="login-view text-light">
-            <Container fluid variant="dark" className="container-login">
-                <Card>
-                    <Card.Body>
+        <div className="login-view  text-light mt-5">
+            <Stack gap={2}>
+                <h2 className="text-center mb-5" >Welcome to UDO-FLIX Movie Site</h2>
+                <Form>
+                    <Col className="mx-auto" xs={8} sm={8} lg={3} xl={3}>
+                        <h6 className="text-light text-center">Please Login</h6>
+                        <Form.Group controlId="formUsername">
+                            <Form.Label className="mt-3">Username:</Form.Label>
+                            <Form.Control className="mb-3" type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Enter your username here" />
+                            {usernameErr && <p>{usernameErr}</p>}
+                        </Form.Group>
 
-                        <Card.Title className="text-center" >Welcome to UDO-FLIX Movie Site</Card.Title>
-                        <Card.Subtitle className="text-muted text-center">Please Login</Card.Subtitle>
-                        <Form>
-                            <Form.Group controlId="formUsername">
-                                <Form.Label>Username:</Form.Label>
-                                <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Enter your username here" />
-                                {usernameErr && <p>{usernameErr}</p>}
-                            </Form.Group>
-
-                            <Form.Group controlId="formPassword">
-                                <Form.Label>Password:</Form.Label>
-                                <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password here" />
-                                {passwordErr && <p>{passwordErr}</p>}
-                            </Form.Group>
-                            <br />
-                            <button className="login-button" size="sm" type='submit' onClick={handleSubmit}>Submit</button>
-                            <span className="regieter-link" > Don't have an account?
-                                <a href="/register" > Register Here</a>
-                            </span>
-                        </Form>
-                    </Card.Body>
-                </Card>
-                <Card.Img src={Images1} style={{ width: "22.5rem", height: "20rem" }} alt="movie images" />
-                <Card.Img src={Images2} style={{ width: "22.5rem", height: "20rem" }} alt="movie images" />
-                <Card.Img src={Images3} style={{ width: "22.5rem", height: "20rem" }} alt="movie images" />
-            </Container>
-
+                        <Form.Group controlId="formPassword">
+                            <Form.Label>Password:</Form.Label>
+                            <Form.Control className="mb-3" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password here" />
+                            {passwordErr && <p>{passwordErr}</p>}
+                        </Form.Group>
+                        <div className="text-center">
+                            <button className="login-button" type='submit' onClick={handleSubmit}>
+                                Login
+                            </button >
+                        </div>
+                        <p className="text-center" > Don't have an account?
+                            <a href="/register" className="register-link"> Register Here</a>
+                        </p>
+                    </Col>
+                </Form>
+            </Stack >
         </div >
 
     );
 }
 
-LoginView.propTypes = {
-    user: PropTypes.shape({
-        username: PropTypes.string.isRequired,
-        password: PropTypes.string.isRequired,
-    }),
-    onLoggedIn: PropTypes.func.isRequired,
-};
+const mapDispatchToProps = (dispatch) => ({
+    handleSubmit: (username, password) => dispatch(handleSubmit(username, password))
+});
+
+export default connect(null, mapDispatchToProps)(LoginView);
