@@ -1,17 +1,20 @@
-#formUsername{
-    margin-bottom: 20px;
-}
 
 .login-button{
-    background: crimson;
-    padding: 10px;
-    border-radius: 12px;
-    height: 40px;
+    background: black;
+    padding: 3px;
+    border-radius: 10px;
+    height: 30px;
     color: whitesmoke;
 }
 
-.regieter-link{
-    position: relative;
-    left: 35px;
-   
+.login-view{
+    position: relative; 
+    top: 70px;  
+    height: 100vh;
+
+
+}
+
+.register-link{
+    color: red;
 }

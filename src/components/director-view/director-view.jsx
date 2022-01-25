@@ -7,7 +7,7 @@ import './director-view.scss';
 export function DirectorView({ director, onBackClick }) {
     console.log(director)
     return (
-        <Container className="text-light">
+        <Container className="text-light mt-5">
             <Row className="directorview">
                 <Col className="label">Director name: </Col>
                 <Col className="value">{director.name} </Col>

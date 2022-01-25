@@ -3,19 +3,6 @@
   margin: 0;
   padding: 0;
 }
-.card-moviecard {
-  overflow: hidden;
-}
-
-.card-image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-body {
-  background-color: black;
-}
 .card-movieview {
   font-family: "Times New Roman", Times, serif;
   padding: 10px;
@@ -35,21 +22,22 @@
 .movieview-image {
   width: 80%;
 }
-#formUsername {
-  margin-bottom: 20px;
-}
-
 .login-button {
-  background: crimson;
-  padding: 10px;
-  border-radius: 12px;
-  height: 40px;
+  background: black;
+  padding: 3px;
+  border-radius: 10px;
+  height: 30px;
   color: whitesmoke;
 }
 
-.regieter-link {
+.login-view {
   position: relative;
-  left: 35px;
+  top: 70px;
+  height: 100vh;
+}
+
+.register-link {
+  color: red;
 }
 .genreview {
   background: black;
@@ -90,6 +78,44 @@
 .navlink {
   margin: 6px;
 }
+:root {
+  --bg__button--color: crimson;
+  --button--color: ghostwhite;
+}
+
+.card {
+  max-width: 380px;
+}
+
+.card-image {
+  height: 260px;
+  max-width: 380px;
+}
+
+.card-button {
+  position: relative;
+  top: 188px;
+  background-color: var(--bg__button--color);
+  color: var(--button--color);
+  font-size: 10px;
+  padding: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  transition: 0.3s background-color, 0.3s font-size, 0.3s ease-out;
+}
+
+.card-button:hover {
+  background: var(--bg__button--color);
+  font-size: 12px;
+}
+.visibility-filter {
+  width: 24.5%;
+  text-align: center;
+  position: relative;
+  left: 420px;
+  bottom: 43.5px;
+  border-radius: 10px;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -97,7 +123,7 @@
 }
 
 .app-container {
-  background: crimson;
+  background: #460505;
   font-family: "Times New Roman", Times, serif;
   font-size: 16px;
 }

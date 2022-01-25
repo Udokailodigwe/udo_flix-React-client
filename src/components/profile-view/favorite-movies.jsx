@@ -3,6 +3,11 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export class FavoriteMovies extends React.Component {
+
+    // setFavoriteMovies(value) {
+    //     this.state.favoriteMovies = value;
+    // }
+
     render() {
         const { favoriteMovies, removeFavorite } = this.props;
 

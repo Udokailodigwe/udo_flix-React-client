@@ -4,6 +4,8 @@ import { UserInfo } from './user-info';
 import { FavoriteMovies } from './favorite-movies';
 import { UpdateUser } from './update-user';
 import { Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { setUser, updateUser } from '../../actions/actions';
 
 
 
@@ -120,18 +122,37 @@ export class ProfileView extends React.Component {
                 console.log(error);
             });
     }
-    handleSubmit(data) {
-        console.log('submitted')
+
+    setUsername(value) {
+        this.state.username = value;
     }
+
+    setPassword(value) {
+        this.state.password = value;
+    }
+
+    setEmail(value) {
+        this.state.email = value;
+    }
+
+    setBirthday(value) {
+        this.state.birthday = value;
+    }
+
+    setFavoriteMovies(value) {
+        this.state.favoriteMovies = value;
+    }
+
     render() {
 
         const { username, password, email, birthday, favoriteMovies } = this.state;
+        const { movies } = this.props;
 
 
         return (
-            <Container>
+            <Container className="mt-5">
                 <Row>
-                    <Col xs={12} sm={4} >
+                    <Col xs={12} sm={6} mx-auto>
                         <Card bg="dark" text="light">
                             <Card.Header>Your Information</Card.Header>
                             <Card.Body>
@@ -139,12 +160,12 @@ export class ProfileView extends React.Component {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col className="mb-3" xs={12} sm={8}>
+                    <Col className="mb-3" xs={12} sm={6} mx-auto>
                         <Card bg="dark" text="light">
                             <Card.Header>Edit Your Information</Card.Header>
 
                             <Card.Body>
-                                <UpdateUser user={this.state} handleSubmit={(user) => this.handleSubmit(user)} handleUpdate={(user) => this.handleUpdate(user)} />
+                                <UpdateUser user={this.state} handleUpdate={(user) => this.handleUpdate(user)} />
                             </Card.Body>
                         </Card>
                     </Col>
@@ -159,9 +180,14 @@ export class ProfileView extends React.Component {
             </Container >
         );
     }
-
-
-
-
-
 }
+
+
+let mapStateToProps = state => {
+    return {
+        user: state.user,
+        movies: state.movies
+    }
+}
+
+export default connect(mapStateToProps, { setUser, updateUser })(ProfileView);
