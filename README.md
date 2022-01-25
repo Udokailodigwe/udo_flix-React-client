@@ -5,11 +5,11 @@ This is a single page application with high responsive appearance. It involves s
 Both directors and genres information are made available, as well as movie details in their various views.
 </br>
 # Hosted via Netlify.
-</hr>
+</br>
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a01696c8-45f4-4562-a428-778bf3190a79/deploy-status)](https://app.netlify.com/sites/udoflix/deploys)
 </br>
-# Key Features
-</hr>
+## Key Features
+</br>
 <li>Users can register/login</li>
 <li>Users can deregister/logout</li>
 <li>Users can view single movie detail</li>
@@ -19,7 +19,7 @@ Both directors and genres information are made available, as well as movie detai
 <li>Users can add and remove movies as favorites</li>
 </br>
 # Technical Applications
-</hr>
+</br>
 <li>This application is a single page application(SPA)</li>
 <li>This application utlized a routing of states to anable navigation between views and url links</li>
 <li>This application provides users the option to filter movies</li>
