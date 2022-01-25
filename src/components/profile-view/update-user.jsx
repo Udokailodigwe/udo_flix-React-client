@@ -2,8 +2,29 @@ import React from 'react';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 
 export class UpdateUser extends React.Component {
+
+    // setUsername(value){
+    //     this.state.username = value;
+    // }
+
+    // setPassword(value){
+    //     this.state.password = value;
+    // }
+
+    // setEmail(value){
+    //     this.state.email = value;
+    // }
+
+    // setBirthday(value){
+    //     this.state.birthday = value;
+    // }
+
+
+
+
+
     render() {
-        const { user, handleSubmit, handleUpdate } = this.props;
+        const { user, handleUpdate } = this.props;
 
         return (
             <Form onSubmit={(e) => this.handleUpdate(
@@ -11,6 +32,7 @@ export class UpdateUser extends React.Component {
                 this.username,
                 this.password,
                 this.email,
+                this.birthday,
             )}>
                 <Row className="mb-3">
                     <Form.Group as={Col}>
@@ -47,7 +69,7 @@ export class UpdateUser extends React.Component {
                         onChange={e => handleUpdate(e.target.value)} />
                 </Form.Group>
                 <br />
-                <Button type="submit" size="sm" variant="light" onClick={() => { handleSubmit(); }}>Update Profile</Button>
+                <Button type="submit" size="sm" variant="light">Update Profile</Button>
             </Form >
         );
     }
