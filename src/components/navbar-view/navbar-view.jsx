@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import './navbar-view.scss';
 
 export function NavbarView({ user }) {
+
     onLoggedOut = () => {
         localStorage.clear();
         window.open('/', '_self');
@@ -34,17 +35,12 @@ export function NavbarView({ user }) {
                     >
                         <NavItem className="navlink">
                             {isAuth() && (
-                                <Link to={`/users/${user}`} href="#"><p>Your Profile</p></Link>
-                            )}
-                        </NavItem>
-                        <NavItem className="navlink">
-                            {isAuth() && (
                                 <p>Welcome: <Link to={`/users/${user}`}><span className="user">{user}</span></Link></p>
                             )}
                         </NavItem>
                         <Nav.Link >
                             {isAuth() && (
-                                <button className="logout_button" size="md" variant="dark" text="light" onClick={() => { this.onLoggedOut() }} ><p>Logout</p></button>
+                                <button className="logout_button" size="md" variant="dark" text="light" onClick={() => { onLoggedOut() }} ><p>Logout</p></button>
                             )}
                         </Nav.Link>
                         <NavItem>
