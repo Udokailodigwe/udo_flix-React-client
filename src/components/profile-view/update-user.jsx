@@ -3,37 +3,25 @@ import { Button, Form, Row, Col } from 'react-bootstrap';
 
 export class UpdateUser extends React.Component {
 
-    // setUsername(value){
-    //     this.state.username = value;
-    // }
-
-    // setPassword(value){
-    //     this.state.password = value;
-    // }
-
-    // setEmail(value){
-    //     this.state.email = value;
-    // }
-
-    // setBirthday(value){
-    //     this.state.birthday = value;
-    // }
-
-
-
+    setUsername(input) {
+        this.props.setUsername(input)
+    }
+    setPassword(input) {
+        this.props.setPassword(input)
+    }
+    setEmail(input) {
+        this.props.setEmail(input)
+    }
+    setBirthday(input) {
+        this.props.setBirthday(input)
+    }
 
 
     render() {
         const { user, handleUpdate } = this.props;
 
         return (
-            <Form onSubmit={(e) => this.handleUpdate(
-                e,
-                this.username,
-                this.password,
-                this.email,
-                this.birthday,
-            )}>
+            <Form>
                 <Row className="mb-3">
                     <Form.Group as={Col}>
                         <Form.Label>Username:</Form.Label>
@@ -41,7 +29,8 @@ export class UpdateUser extends React.Component {
                             type="text"
                             name="username"
                             defaultValue={user.username}
-                            onChange={e => handleUpdate(e)} />
+                            onChange={(event) => this.setUsername(event.target.value)}
+                        />
                     </Form.Group>
                     <Form.Group as={Col}>
                         <Form.Label>Password:</Form.Label>
@@ -49,7 +38,8 @@ export class UpdateUser extends React.Component {
                             type="password"
                             name="password"
                             defaultValue={user.password}
-                            onChange={e => handleUpdate(e)} />
+                            onChange={(event) => this.setPassword(event.target.value)}
+                        />
                     </Form.Group>
                 </Row>
                 <Form.Group className="mb-3">
@@ -58,18 +48,20 @@ export class UpdateUser extends React.Component {
                         type="email"
                         name="email"
                         defaultValue={user.email}
-                        onChange={e => handleUpdate(e.target.value)} />
+                        onChange={(event) => this.setEmail(event.target.value)}
+                    />
                 </Form.Group>
                 <Form.Group className="mb-2">
                     <Form.Label>Birthday:</Form.Label>
                     <Form.Control
-                        type="date"
+                        type="isDate"
                         name="date"
                         defaultValue={user.birthday}
-                        onChange={e => handleUpdate(e.target.value)} />
+                        onChange={(event) => this.setBirthday(event.target.value)}
+                    />
                 </Form.Group>
                 <br />
-                <Button type="submit" size="sm" variant="light">Update Profile</Button>
+                <Button type="submit" size="sm" variant="light" onClick={(e) => handleUpdate(e)}>Update Profile</Button>
             </Form >
         );
     }

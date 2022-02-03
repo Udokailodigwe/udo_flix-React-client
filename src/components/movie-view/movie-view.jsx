@@ -23,7 +23,7 @@ export class MovieView extends React.Component {
          isFavorite: 'Movie added as favorite!'
       });
       //post selected movie by user to server as favorite.
-      axios.post('https://udo-flix.herokuapp.com/users/${username}/movies/' + this.props.movie._id, {}, {
+      axios.post(`https://udo-flix.herokuapp.com/users/${username}/movies/` + this.props.movie._id, {}, {
          headers: { Authorization: `Bearer ${token}` }
       })
          .then((response) => {
@@ -47,7 +47,7 @@ export class MovieView extends React.Component {
             <Row className="movieview-detail">
                <Col>Title:</Col>
                <Col xs={12} md={8}>{movie.title}&nbsp;
-                  <Button variant="secondary" onClick={() => this.selectedFavorite}>
+                  <Button variant="secondary" size="sm" onClick={() => this.selectedFavorite()}>
                      {this.state.isFavorite}
                   </Button>
                </Col>

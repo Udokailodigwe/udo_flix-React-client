@@ -3,7 +3,7 @@ import axios from 'axios';
 import { UserInfo } from './user-info';
 import { FavoriteMovies } from './favorite-movies';
 import { UpdateUser } from './update-user';
-import { Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { Container, Row, Col, Card, Alert, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { setUser, updateUser } from '../../actions/actions';
 
@@ -52,7 +52,7 @@ export class ProfileView extends React.Component {
     };
 
     //remove favorite movie
-    removeFavorite(movies) {
+    removeFavorite(movie) {
         const token = localStorage.getItem('token');
         const username = localStorage.getItem('user');
         axios.delete(`https://udo-flix.herokuapp.com/users/${username}/movies/${movie._id}`, {
@@ -104,7 +104,8 @@ export class ProfileView extends React.Component {
     };
 
     //deregistering a user
-    deleteUser() {
+    deleteUser(e) {
+        e.preventDefault();
         const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
@@ -123,49 +124,53 @@ export class ProfileView extends React.Component {
             });
     }
 
+    //change the shown old value in the state to newly entered value 
     setUsername(value) {
-        this.state.username = value;
+        this.setState({ username: value })
     }
-
     setPassword(value) {
-        this.state.password = value;
+        this.setState({ password: value })
     }
 
     setEmail(value) {
-        this.state.email = value;
+        this.setState({ email: value })
     }
-
     setBirthday(value) {
-        this.state.birthday = value;
-    }
-
-    setFavoriteMovies(value) {
-        this.state.favoriteMovies = value;
+        this.setState({ birthday: value })
     }
 
     render() {
 
-        const { username, password, email, birthday, favoriteMovies } = this.state;
+        const { username, email, birthday, favoriteMovies } = this.state;
         const { movies } = this.props;
-
-
         return (
             <Container className="mt-5">
                 <Row>
-                    <Col xs={12} sm={6} mx-auto>
+                    <Col xs={12} sm={6} >
                         <Card bg="dark" text="light">
                             <Card.Header>Your Information</Card.Header>
                             <Card.Body>
-                                <UserInfo name={username} email={email} birthday={birthday} favoriteMovies={favoriteMovies} password={password} />
+                                <UserInfo
+                                    name={username}
+                                    email={email}
+                                    birthday={birthday}
+                                />
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col className="mb-3" xs={12} sm={6} mx-auto>
+                    <Col className="mb-3" xs={12} sm={6} >
                         <Card bg="dark" text="light">
-                            <Card.Header>Edit Your Information</Card.Header>
+                            <Card.Header>Update Your Information</Card.Header>
 
                             <Card.Body>
-                                <UpdateUser user={this.state} handleUpdate={(user) => this.handleUpdate(user)} />
+                                <UpdateUser
+                                    user={this.state}
+                                    handleUpdate={(user) => this.handleUpdate(user)}
+                                    setUsername={(value) => this.setUsername(value)}
+                                    setPassword={(value) => this.setPassword(value)}
+                                    setEmail={(value) => this.setEmail(value)}
+                                    setBirthday={(value) => this.setBirthday(value)}
+                                />
                             </Card.Body>
                         </Card>
                     </Col>
@@ -173,10 +178,22 @@ export class ProfileView extends React.Component {
                 <Row>
                     <Col>
                         <Card bg="dark" text="light">
-                            <FavoriteMovies favoriteMovies={favoriteMovies} removeFavorite={(item) => this.removeFavorite(item)} />
+                            <FavoriteMovies
+                                favoriteMovies={favoriteMovies}
+                                removeFavorite={(item) => this.removeFavorite(item)}
+                                selectedFavorite={(e) => this.selectedFavorite(e)}
+                                movies={movies}
+                            />
                         </Card>
                     </Col>
                 </Row>
+                <div className="text-center">
+                    <p variant="light">Hit the button below to delete account.</p>
+                    <Button variant="danger" onClick={(e) => this.deleteUser(e)}>
+                        Delete Your Account Profile
+                    </Button>
+                    <p variant="light">Note! deletion cannot be reversed.</p>
+                </div>
             </Container >
         );
     }

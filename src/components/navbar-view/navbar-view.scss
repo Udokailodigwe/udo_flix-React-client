@@ -6,7 +6,7 @@
     top: 16px;
    
 }
-.logout_button{
+.logout_button {
     position: relative;
     top: -7px;
     text-decoration: none;  
@@ -18,6 +18,12 @@
     height: 30px;
 
 }
+
+.nav_profile{
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
 .brand{
     position: relative;
     bottom:18px;
@@ -26,8 +32,9 @@
     color: $color1;
 }
 .user{
-    color:$color1
+    color:$color1;
+    margin-right: 5px;
 }
-.navlink{
+.navlink {
     margin: 6px;
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { Form, Button, Stack, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -19,13 +19,14 @@ export function RegistrationView(props) {
         usernameErr: '',
         passwordErr: '',
         emailErr: '',
+        //birthdayErr: '',
     });
 
 
     const validate = () => {
         let isReq = true;
         if (!name) {
-            setValues({ ...values, nameErr: 'Name is requires' });
+            setValues({ ...values, nameErr: 'Name is required' });
             isReq = false;
         } else if (name.length < 2) {
             setValues({ ...values, nameErr: 'Name should be more one character long' });
@@ -34,8 +35,8 @@ export function RegistrationView(props) {
         if (!username) {
             setValues({ ...values, usernameErr: 'Username is required' });
             isReq = false;
-        } else if (username.length < 3) {
-            setValues({ ...values, usernameErr: 'Username must be 3 characters long' });
+        } else if (username.length < 5) {
+            setValues({ ...values, usernameErr: 'Username must be 5 characters long' });
             isReq = false;
         }
         if (!password) {
@@ -51,6 +52,13 @@ export function RegistrationView(props) {
         } else if (email.indexOf('@') === -1) {
             setValues({ ...values, emailErr: 'Email is invalid' });
         }
+        // if (!birthday) {
+        //     setValues({ ...values, birthdayErr: 'Birth date is required' });
+        //     isReq = false;
+        //     const d = isDate(); or new Date();
+        // } else if (!birthday.d) {
+        //     setValues({ ...values, birthdayErr: 'Birth date is invalid' });
+        // }
         return isReq
     }
 
@@ -66,7 +74,7 @@ export function RegistrationView(props) {
                 birthday: birthday
             })
                 .then(response => {
-                    const user = response.data;
+                    const data = response.data;
                     console.log(data);
                     alert('Registration successful, please login!');
                     window.open('/', '_self'); //redirect user to homepage in current tab
@@ -130,6 +138,17 @@ export function RegistrationView(props) {
                             />
                             {values.emailErr && <p>{values.emailErr}</p>}
                         </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Birthday:</Form.Label>
+                            <Form.Control
+                                type="birthday"
+                                value={birthday}
+                                onChange={e => setBirthday(e.target.value)}
+                                reqired
+                                placeholder="Enter birthday "
+                            />
+                            {values.birthdayErr && <p>{values.birthdayErr}</p>}
+                        </Form.Group>
                         <Button variant="danger" text="light" type='submit' onClick={handleSubmit}>Register</Button>
                         <p>
                             Have an account already? Please &nbsp;
@@ -143,12 +162,11 @@ export function RegistrationView(props) {
     );
 }
 
-RegistrationView.propTypes = {
-    register: PropTypes.shape({
-        name: PropTypes.string.isRequired,
+RegistrationView.prototype = {
+    name: PropTypes.shape({
         username: PropTypes.string.isRequired,
-        password: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequire,
         birthday: PropTypes.string
-    })
+    }).isRequired
 };

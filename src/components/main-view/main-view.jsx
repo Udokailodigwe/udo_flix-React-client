@@ -30,7 +30,7 @@ class MainView extends React.Component {
    }
 
    getMovies(token) {
-      axios.get('https://udo-flix.herokuapp.com/movies', {
+      axios.get(`https://udo-flix.herokuapp.com/movies`, {
          headers: { Authorization: `Bearer ${token}` } //make auhthentication request
       })
          .then(response => {
@@ -95,7 +95,7 @@ class MainView extends React.Component {
                   </Col>
                   //render empty page if no movie is loaded
                   if (movies.length === 0) return <div className="main-view" />;
-                  return < MoviesList movies={movies} />;
+                  return < MoviesList movie={movies} />;
                }} />
                {/*registration view*/}
                <Route path="/register" render={({ match, history }) => {
@@ -146,9 +146,13 @@ class MainView extends React.Component {
                   </Col>
                   if (movies.length === 0) return <div className="main-view" />;
                   return <Col>
-                     <ProfileView movies={movies} user={user === match.params.user}
+                     <ProfileView
+                        movies={movies}
+                        // movie={movies.find(m => m._id === match.params.movieId)}
+                        user={user === match.params.user}
                         history={history}
-                        onBackClick={() => history.goBack()} removeFavorite={(_id) => this.removeFavorite(_id)} />
+                        removeFavorite={(_id) => this.removeFavorite(_id)}
+                        selectedFavorite={(e) => this.selectedFavorite(e)} />
                   </Col>
                }} />
             </Row>

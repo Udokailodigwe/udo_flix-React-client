@@ -33,6 +33,7 @@ export function NavbarView({ user }) {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
+                        <Nav.Link href="/users/username" className="text-light nav_profile">Profile</Nav.Link>
                         <NavItem className="navlink">
                             {isAuth() && (
                                 <p>Welcome: <Link to={`/users/${user}`}><span className="user">{user}</span></Link></p>
@@ -44,13 +45,13 @@ export function NavbarView({ user }) {
                             )}
                         </Nav.Link>
                         <NavItem>
-                            {!isAuth() && (
-                                <Nav.Link href="/" className="login-signup"><p>Login</p></Nav.Link> //Hide login link if !isAuth
+                            {!isAuth() && (  //Hide login link if !isAuth
+                                <Nav.Link href="/" className="login-signup"><p>Login</p></Nav.Link>
                             )}
                         </NavItem>
                         <NavItem>
-                            {!isAuth() && (
-                                <Nav.Link href="/register" className="login-signup"><p>Sign-up</p></Nav.Link> //Hide signup link if !isAuth
+                            {!isAuth() && ( //Hide signup link if !isAuth
+                                <Nav.Link href="/register" className="login-signup"><p>Sign-up</p></Nav.Link>
                             )}
                         </NavItem>
                     </Nav>
