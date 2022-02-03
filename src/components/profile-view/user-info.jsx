@@ -2,7 +2,7 @@ import React from 'react';
 
 export class UserInfo extends React.Component {
     render() {
-        const { email, name, username, birthday, favoriteMovies } = this.props;
+        const { email, name, username, birthday } = this.props;
 
         return (
             <div>
