@@ -6,7 +6,7 @@ import './navbar-view.scss';
 
 export function NavbarView({ user }) {
 
-    onLoggedOut = () => {
+    const onLoggedOut = () => {
         localStorage.clear();
         window.open('/', '_self');
     };

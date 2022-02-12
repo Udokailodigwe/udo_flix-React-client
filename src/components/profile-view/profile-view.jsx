@@ -55,7 +55,7 @@ export class ProfileView extends React.Component {
     removeFavorite(movie) {
         const token = localStorage.getItem('token');
         const username = localStorage.getItem('user');
-        axios.delete(`https://udo-flix.herokuapp.com/users/${username}/movies/${movie._id}`, {
+        axios.delete(`https://udo-flix.herokuapp.com/users/${username}/movies/${movie}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(() => {
