@@ -41940,7 +41940,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","axios":"iYoWk","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","prop-types":"1tgq3"}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","axios":"iYoWk","prop-types":"1tgq3","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42253,7 +42253,7 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _navbarViewScss = require("./navbar-view.scss");
 function NavbarView({ user  }) {
-    onLoggedOut = ()=>{
+    const onLoggedOut = ()=>{
         localStorage.clear();
         window.open('/', '_self');
     };
@@ -42327,27 +42327,34 @@ function NavbarView({ user  }) {
                         },
                         __self: this,
                         children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                href: "/users/username",
-                                className: "text-light nav_profile",
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Item, {
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
                                     lineNumber: 36
                                 },
                                 __self: this,
-                                children: "Profile"
+                                children: isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                    href: "/users/username",
+                                    className: "text-light nav_profile",
+                                    __source: {
+                                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                                        lineNumber: 38
+                                    },
+                                    __self: this,
+                                    children: " Profile"
+                                })
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.NavItem, {
                                 className: "navlink",
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 37
+                                    lineNumber: 41
                                 },
                                 __self: this,
                                 children: isAuth() && /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 39
+                                        lineNumber: 43
                                     },
                                     __self: this,
                                     children: [
@@ -42356,14 +42363,14 @@ function NavbarView({ user  }) {
                                             to: `/users/${user}`,
                                             __source: {
                                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                lineNumber: 39
+                                                lineNumber: 43
                                             },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                                 className: "user",
                                                 __source: {
                                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                    lineNumber: 39
+                                                    lineNumber: 43
                                                 },
                                                 __self: this,
                                                 children: user
@@ -42375,7 +42382,7 @@ function NavbarView({ user  }) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 42
+                                    lineNumber: 46
                                 },
                                 __self: this,
                                 children: isAuth() && /*#__PURE__*/ _jsxRuntime.jsx("button", {
@@ -42388,13 +42395,13 @@ function NavbarView({ user  }) {
                                     },
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 44
+                                        lineNumber: 48
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 44
+                                            lineNumber: 48
                                         },
                                         __self: this,
                                         children: "Logout"
@@ -42404,7 +42411,7 @@ function NavbarView({ user  }) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.NavItem, {
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 47
+                                    lineNumber: 51
                                 },
                                 __self: this,
                                 children: !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
@@ -42412,13 +42419,13 @@ function NavbarView({ user  }) {
                                     className: "login-signup",
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 49
+                                        lineNumber: 53
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 49
+                                            lineNumber: 53
                                         },
                                         __self: this,
                                         children: "Login"
@@ -42428,7 +42435,7 @@ function NavbarView({ user  }) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.NavItem, {
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 52
+                                    lineNumber: 56
                                 },
                                 __self: this,
                                 children: !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
@@ -42436,13 +42443,13 @@ function NavbarView({ user  }) {
                                     className: "login-signup",
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 54
+                                        lineNumber: 58
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 54
+                                            lineNumber: 58
                                         },
                                         __self: this,
                                         children: "Sign-up"
@@ -42529,7 +42536,7 @@ class ProfileView extends _reactDefault.default.Component {
     removeFavorite(movie) {
         const token = localStorage.getItem('token');
         const username = localStorage.getItem('user');
-        _axiosDefault.default.delete(`https://udo-flix.herokuapp.com/users/${username}/movies/${movie._id}`, {
+        _axiosDefault.default.delete(`https://udo-flix.herokuapp.com/users/${username}/movies/${movie}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
