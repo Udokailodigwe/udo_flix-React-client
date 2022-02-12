@@ -80,7 +80,7 @@ export function LoginView(props) {
                             </button >
                         </div>
                         <p className="text-center" > Don't have an account?
-                            <a href="/register" className="register-link"> Register Here</a>
+                            <Link to="/register" className="register-link"> Register Here</Link>
                         </p>
                     </Col>
                 </Form>
