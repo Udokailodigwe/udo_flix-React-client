@@ -41498,8 +41498,8 @@ function LoginView(props) {
                                 __self: this,
                                 children: [
                                     " Don't have an account?",
-                                    /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                                        href: "/register",
+                                    /*#__PURE__*/ _jsxRuntime.jsx(Link, {
+                                        to: "/register",
                                         className: "register-link",
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
