@@ -33,7 +33,11 @@ export function NavbarView({ user }) {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="/users/username" className="text-light nav_profile">Profile</Nav.Link>
+                        <Nav.Item>
+                            {isAuth() && (
+                                <Nav.Link href="/users/username" className="text-light nav_profile"> Profile</Nav.Link>
+                            )}
+                        </Nav.Item>
                         <NavItem className="navlink">
                             {isAuth() && (
                                 <p>Welcome: <Link to={`/users/${user}`}><span className="user">{user}</span></Link></p>
