@@ -41293,8 +41293,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
+var _reactRouterDom = require("react-router-dom");
 var _reactRedux = require("react-redux");
 var _reactBootstrap = require("react-bootstrap");
 var _loginViewScss = require("./login-view.scss");
@@ -41498,7 +41497,7 @@ function LoginView(props) {
                                 __self: this,
                                 children: [
                                     " Don't have an account?",
-                                    /*#__PURE__*/ _jsxRuntime.jsx(Link, {
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: "/register",
                                         className: "register-link",
                                         __source: {
@@ -41532,7 +41531,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-bootstrap/Form":"5ykgY","react-redux":"2L0if","react-bootstrap":"h2YVd","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"lS4BK":[function() {},{}],"aP2YV":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-bootstrap":"h2YVd","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW"}],"lS4BK":[function() {},{}],"aP2YV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8dd4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42333,8 +42332,8 @@ function NavbarView({ user  }) {
                                     lineNumber: 36
                                 },
                                 __self: this,
-                                children: isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                    href: "/users/username",
+                                children: isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: "/users/username",
                                     className: "text-light nav_profile",
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
@@ -42414,8 +42413,8 @@ function NavbarView({ user  }) {
                                     lineNumber: 51
                                 },
                                 __self: this,
-                                children: !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                    href: "/",
+                                children: !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: "/",
                                     className: "login-signup",
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
@@ -42438,8 +42437,8 @@ function NavbarView({ user  }) {
                                     lineNumber: 56
                                 },
                                 __self: this,
-                                children: !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                    href: "/register",
+                                children: !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: "/register",
                                     className: "login-signup",
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
