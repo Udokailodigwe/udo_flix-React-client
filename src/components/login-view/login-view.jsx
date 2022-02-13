@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Stack, Form, Col } from 'react-bootstrap';
 
@@ -80,7 +80,7 @@ export function LoginView(props) {
                             </button >
                         </div>
                         <p className="text-center" > Don't have an account?
-                            <a href="/register" className="register-link"> Register Here</a>
+                            <Link to="/register" className="register-link"> Register Here</Link>
                         </p>
                     </Col>
                 </Form>

@@ -35,7 +35,7 @@ export function NavbarView({ user }) {
                     >
                         <Nav.Item>
                             {isAuth() && (
-                                <Nav.Link href="/users/username" className="text-light nav_profile"> Profile</Nav.Link>
+                                <Link to="/users/username" className="text-light nav_profile"> Profile</Link>
                             )}
                         </Nav.Item>
                         <NavItem className="navlink">
@@ -50,12 +50,12 @@ export function NavbarView({ user }) {
                         </Nav.Link>
                         <NavItem>
                             {!isAuth() && (  //Hide login link if !isAuth
-                                <Nav.Link href="/" className="login-signup"><p>Login</p></Nav.Link>
+                                <Link to="/" className="login-signup"><p>Login</p></Link>
                             )}
                         </NavItem>
                         <NavItem>
                             {!isAuth() && ( //Hide signup link if !isAuth
-                                <Nav.Link href="/register" className="login-signup"><p>Sign-up</p></Nav.Link>
+                                <Link to="/register" className="login-signup"><p>Sign-up</p></Link>
                             )}
                         </NavItem>
                     </Nav>
