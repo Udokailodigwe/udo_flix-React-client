@@ -7,6 +7,8 @@ import { Container, Row, Col, Card, Alert, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { setUser, updateUser } from '../../actions/actions';
 
+import './profile-view.scss';
+
 
 
 export class ProfileView extends React.Component {
@@ -58,7 +60,8 @@ export class ProfileView extends React.Component {
         axios.delete(`https://udo-flix.herokuapp.com/users/${username}/movies/${movie}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
-            .then(() => {
+            .then((response) => {
+                console.log(response)
                 alert('Movie was successfully removed');
                 this.componentDidMount();
             })
@@ -144,10 +147,10 @@ export class ProfileView extends React.Component {
         const { username, email, birthday, favoriteMovies } = this.state;
         const { movies } = this.props;
         return (
-            <Container className="mt-5">
+            <Container className="profile-container mt-5">
                 <Row>
                     <Col xs={12} sm={6} >
-                        <Card bg="dark" text="light">
+                        <Card className = 'userinfo' bg="dark" text="light">
                             <Card.Header>Your Information</Card.Header>
                             <Card.Body>
                                 <UserInfo

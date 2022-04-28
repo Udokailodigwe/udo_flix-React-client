@@ -23,7 +23,7 @@ export class MovieView extends React.Component {
          isFavorite: 'Movie added as favorite!'
       });
       //post selected movie by user to server as favorite.
-      axios.post(`https://udo-flix.herokuapp.com/users/${username}/movies/` + this.props.movie._id, {}, {
+      axios.post(`https://udo-flix.herokuapp.com/users/${username}/movies/` + this.props.movie._id, [], {
          headers: { Authorization: `Bearer ${token}` }
       })
          .then((response) => {
@@ -46,7 +46,7 @@ export class MovieView extends React.Component {
             </Row>
             <Row className="movieview-detail">
                <Col>Title:</Col>
-               <Col xs={12} md={8}>{movie.title}&nbsp;
+               <Col >{movie.title}&nbsp;
                   <Button variant="secondary" size="sm" onClick={() => this.selectedFavorite()}>
                      {this.state.isFavorite}
                   </Button>
@@ -54,7 +54,7 @@ export class MovieView extends React.Component {
             </Row>
             <Row className="movieview-detail">
                <Col>Description: </Col>
-               <Col xs={12} md={8}>{movie.description}</Col>
+               <Col >{movie.description}</Col>
             </Row>
             <Row className="movieview-detail">
                <Link to={`/director/${movie.director.name}`}>
@@ -68,13 +68,13 @@ export class MovieView extends React.Component {
             </Row>
             <Row className="movieview-detail">
                <Col>Actor:</Col>
-               <Col xs={12} md={8}>{movie.actors}</Col>
+               <Col >{movie.actors}</Col>
             </Row>
             <Row className="movieview-detail">
                <Col>Released year:</Col>
-               <Col xs={12} md={8}>{movie.releasedyear}</Col>
+               <Col >{movie.releasedyear}</Col>
             </Row>
-            <Button xs={12} md={8} size="md" variant="dark" onClick={() => { onBackClick(); }}> Back </Button>
+            <Button  size="md" variant="dark" onClick={() => { onBackClick(); }}> Back </Button>
          </div >
       );
    }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import './favorite-movies.scss';
 
 export class FavoriteMovies extends React.Component {
 
@@ -10,15 +10,15 @@ export class FavoriteMovies extends React.Component {
         // filter users favorite movies from movies list passed as props
         const favMovies = movies.filter(mov => favoriteMovies.includes(mov._id));
         return (
-            <div>
-                <h2>Favorite Movies</h2>
+            <div className='fav-container'>
+                <h1>Your Favorite Movies</h1>
+                <div className='main-div'>
                 {favMovies.map((movies) => {
                     return (
                         <div key={movies._id}>
-                            <img src={movies.imagepath} />
-                            <Link to={`/movies/${movies._id}`}>
-                                <h4>{movies.title}</h4>
-                            </Link>
+                                <div>
+                                <img src={movies.imagepath} />
+                                </div>
                             <Button
                                 variant="danger"
                                 value={movies._id}
@@ -31,6 +31,7 @@ export class FavoriteMovies extends React.Component {
                 })
                 }
             </div >
+        </div>
         );
     }
 }

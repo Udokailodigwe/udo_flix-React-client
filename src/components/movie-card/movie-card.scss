@@ -5,16 +5,17 @@
 }
 .card{
 max-width: 380px;
+height: 350px;
 }
 
 .card-image{
-    height:260px;
+    height: 350px;
     max-width: 380px;
 }
 
 .card-button{
     position:relative;
-    top: 188px;
+    top: 176px;
     background-color: var(--bg__button--color);
     color: var(--button--color);
     font-size: 10px;

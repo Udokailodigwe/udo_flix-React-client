@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 
+import './update-user.scss';
+
 export class UpdateUser extends React.Component {
 
     setUsername(input) {
@@ -61,7 +63,7 @@ export class UpdateUser extends React.Component {
                     />
                 </Form.Group>
                 <br />
-                <Button type="submit" size="sm" variant="light" onClick={(e) => handleUpdate(e)}>Update Profile</Button>
+                <Button className='button' type="submit" size="sm" variant="light" onClick={(e) => handleUpdate(e)}>Update Profile</Button>
             </Form >
         );
     }

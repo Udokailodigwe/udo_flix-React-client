@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { Form, Button, Stack, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+import './registration-view.scss';
+
 
 export function RegistrationView(props) {
     //store fields with updated fields for reuse in form  
@@ -88,11 +90,11 @@ export function RegistrationView(props) {
     };
 
     return (
-        <div className="text-light mt-5">
+        <div className=" reg-container text-light mt-5">
             <Stack>
                 <h2 className="text-center mb-5" >Please register to access udo_flix</h2>
                 <Form>
-                    <Col className="mx-auto" xs={8} sm={8} lg={3} xl={6}>
+                    <Col className="mx-auto" >
                         <Form.Group className="mb-3">
                             <Form.Label>Name:</Form.Label>
                             <Form.Control
