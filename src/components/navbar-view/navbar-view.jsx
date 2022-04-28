@@ -35,27 +35,32 @@ export function NavbarView({ user }) {
                     >
                         <Nav.Item>
                             {isAuth() && (
-                                <Link to="/users/username" className="text-light nav_profile"> Profile</Link>
+                                <Link to="/users/username" className="text-light nav_profile">  Profile
+                                </Link>
                             )}
                         </Nav.Item>
                         <NavItem className="navlink">
                             {isAuth() && (
-                                <p>Welcome: <Link to={`/users/${user}`}><span className="user">{user}</span></Link></p>
+                                <p>Welcome: 
+                                    <Link to={`/users/${user}`} className='user'>
+                                        {user}
+                                    </Link>
+                                </p>
                             )}
                         </NavItem>
                         <Nav.Link >
                             {isAuth() && (
-                                <button className="logout_button" size="md" variant="dark" text="light" onClick={() => { onLoggedOut() }} ><p>Logout</p></button>
+                                <button className="logout_button" size="md" variant="dark" text="light" onClick={() => { onLoggedOut() }} >Logout</button>
                             )}
                         </Nav.Link>
                         <NavItem>
                             {!isAuth() && (  //Hide login link if !isAuth
-                                <Link to="/" className="login-signup"><p>Login</p></Link>
+                                <Link to="/" className="login-signup">Login</Link>
                             )}
                         </NavItem>
                         <NavItem>
                             {!isAuth() && ( //Hide signup link if !isAuth
-                                <Link to="/register" className="login-signup"><p>Sign-up</p></Link>
+                                <Link to="/register" className="login-signup">Sign-up</Link>
                             )}
                         </NavItem>
                     </Nav>
