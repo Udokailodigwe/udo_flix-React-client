@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.movie_view {
+  background: black;
+  height: 100vh;
+}
+
+.movieview-detail {
+  padding: 7px;
+}
+
+.movieview-image {
+  width: 40%;
+}
+.login-button {
+  background: black;
+  padding: 3px;
+  border-radius: 10px;
+  height: 30px;
+  width: 80px;
+  color: whitesmoke;
+}
+.login-button:hover {
+  color: black;
+  background: white;
+}
+
+.login-view {
+  position: relative;
+  top: 70px;
+  height: 100vh;
+}
+
+.register-link {
+  color: red;
+}
+.reg-container {
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+}
+.genre-container {
+  background: black;
+  height: 100vh;
+}
+.director-container {
+  background: black;
+  height: 100vh;
+}
+.nav-collapse {
+  position: relative;
+  top: 13px;
+}
+
+.logout_button {
+  position: relative;
+  top: -10px;
+  text-decoration: none;
+  background: #dc143c;
+  color: #f5f5f5;
+  font-size: 14px;
+  border-radius: 12px;
+  height: 30px;
+  width: 70px;
+}
+.logout_button:hover {
+  color: #dc143c;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.nav_profile {
+  position: relative;
+  top: 6px;
+  margin-right: -6px;
+}
+
+.brand {
+  position: relative;
+  bottom: 18px;
+}
+
+.login-signup, p {
+  color: #f5f5f5;
+  margin-left: 25px;
+}
+
+.user {
+  color: #f5f5f5;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.navlink {
+  margin: 6px;
+}
+.fav-container {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #8c6269;
+}
+
+img {
+  height: 260px;
+  max-width: 380px;
+  padding: 5px;
+}
+.button {
+  position: relative;
+  bottom: 30px;
+  margin: 3px;
+}
+.userinfo {
+  font-size: 20px;
+}
+
+.profile-container {
+  height: 100vh;
+}
+:root {
+  --bg__button--color: crimson;
+  --button--color: ghostwhite;
+}
+
+.card {
+  max-width: 380px;
+  height: 350px;
+}
+
+.card-image {
+  height: 350px;
+  max-width: 380px;
+}
+
+.card-button {
+  position: relative;
+  top: 176px;
+  background-color: var(--bg__button--color);
+  color: var(--button--color);
+  font-size: 10px;
+  padding: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  transition: 0.3s background-color, 0.3s font-size, 0.3s ease-out;
+}
+
+.card-button:hover {
+  background: var(--bg__button--color);
+  font-size: 12px;
+}
+.visibility-filter {
+  width: 24.5%;
+  text-align: center;
+  position: relative;
+  left: 420px;
+  top: 16px;
+  border-radius: 10px;
+  margin: 20px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  background: #460505;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=/src.78399e21.css.map */
