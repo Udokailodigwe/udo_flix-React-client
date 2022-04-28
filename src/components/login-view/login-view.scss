@@ -4,7 +4,12 @@
     padding: 3px;
     border-radius: 10px;
     height: 30px;
+    width: 80px;
     color: whitesmoke;
+        &:hover{
+            color: black;
+            background: white;
+        }
 }
 
 .login-view{

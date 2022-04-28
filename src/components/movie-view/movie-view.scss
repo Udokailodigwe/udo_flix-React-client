@@ -1,19 +1,21 @@
-.card-movieview{
-    font-family: 'Times New Roman', Times, serif;
-    padding: 10px;
-    line-height: 20px;
-    font-size: 16px;
-    text-align: justify;
-}
+// .card-movieview{
+//     font-family: 'Times New Roman', Times, serif;
+//     padding: 10px;
+//     line-height: 20px;
+//     font-size: 16px;
+//     text-align: justify;
+// }
 
 .movie_view{
     background: black;
+    height: 100vh;
+
 }
 
 .movieview-detail{
-padding: 7px;
+    padding: 7px;
 }
 
 .movieview-image{
-    width: 80%;
+    width: 40%;
 }

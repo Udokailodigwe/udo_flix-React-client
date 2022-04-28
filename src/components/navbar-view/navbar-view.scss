@@ -3,37 +3,44 @@
 
 .nav-collapse{
     position: relative;
-    top: 16px;
-   
+    top: 13px;
 }
 .logout_button {
     position: relative;
-    top: -7px;
+    top: -10px;
     text-decoration: none;  
     background: $color2;
     color: $color1; 
     font-size: 14px;
-    padding: 5px;
     border-radius: 12px;
     height: 30px;
-
+    width: 70px;
+        &:hover{
+            color: $color2;
+            background: #f5f5f5;
+            cursor: pointer;
+        }
 }
 
 .nav_profile{
     position: relative;
-    top: -2px;
-    margin-right: 5px;
+    top: 6px;
+    margin-right: -6px;
 }
+
 .brand{
     position: relative;
     bottom:18px;
 }
 .login-signup, p{
     color: $color1;
+    margin-left: 25px;
 }
+
 .user{
     color:$color1;
-    margin-right: 5px;
+    margin: 5px;
+    text-decoration: none;
 }
 .navlink {
     margin: 6px;

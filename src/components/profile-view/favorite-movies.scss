@@ -1,0 +1,20 @@
+.fav-container{
+   width: 80vw;
+      display: flex;
+   flex-wrap: wrap;
+}
+
+.main-div{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   background-color: rgb(140, 98, 105);
+}
+
+img{
+   height:260px;
+   max-width: 380px;
+   // margin: 10px;
+   padding: 5px;
+}
+
