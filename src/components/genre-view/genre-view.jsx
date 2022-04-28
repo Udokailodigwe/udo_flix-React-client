@@ -8,7 +8,7 @@ export class GenreView extends React.Component {
         const { genre, onBackClick } = this.props;
         console.log('movie', genre)
         return (
-            <Container className="text-light mt-5">
+            <Container className="genre-container text-light mt-5">
                 <Row className="genreview">
                     <Col className="label">Genre name: </Col>
                     <Col className="value">{genre.name} </Col>
