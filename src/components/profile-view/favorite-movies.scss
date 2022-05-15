@@ -1,14 +1,18 @@
 .fav-container{
    width: 80vw;
-      display: flex;
+   // display: flex;
    flex-wrap: wrap;
 }
 
+h1{
+   color: white;
+}
 .main-div{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    background-color: rgb(140, 98, 105);
+   margin-bottom: 20px;
 }
 
 img{

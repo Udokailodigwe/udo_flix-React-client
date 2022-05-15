@@ -178,18 +178,12 @@ export class ProfileView extends React.Component {
                         </Card>
                     </Col>
                 </Row>
-                <Row>
-                    <Col>
-                        <Card bg="dark" text="light">
-                            <FavoriteMovies
+                <FavoriteMovies
                                 favoriteMovies={favoriteMovies}
                                 removeFavorite={(item) => this.removeFavorite(item)}
                                 selectedFavorite={(e) => this.selectedFavorite(e)}
                                 movies={movies}
                             />
-                        </Card>
-                    </Col>
-                </Row>
                 <div className="text-center">
                     <p variant="light">Hit the button below to delete account.</p>
                     <Button variant="danger" onClick={(e) => this.deleteUser(e)}>

@@ -57345,10 +57345,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
         setBirthday: function setBirthday(value) {
           return _this3.setBirthday(value);
         }
-      }))))), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card, {
-        bg: "dark",
-        text: "light"
-      }, /*#__PURE__*/_react.default.createElement(_favoriteMovies.FavoriteMovies, {
+      }))))), /*#__PURE__*/_react.default.createElement(_favoriteMovies.FavoriteMovies, {
         favoriteMovies: favoriteMovies,
         removeFavorite: function removeFavorite(item) {
           return _this3.removeFavorite(item);
@@ -57357,7 +57354,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
           return _this3.selectedFavorite(e);
         },
         movies: movies
-      })))), /*#__PURE__*/_react.default.createElement("div", {
+      }), /*#__PURE__*/_react.default.createElement("div", {
         className: "text-center"
       }, /*#__PURE__*/_react.default.createElement("p", {
         variant: "light"
@@ -58868,7 +58865,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59404" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59028" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
