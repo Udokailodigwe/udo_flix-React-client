@@ -5,13 +5,15 @@
 }
 
 h1{
-   color: white;
+   background-color: #ffffff;
+   border-radius: 5px;
+
 }
 .main-div{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
-   background-color: rgb(140, 98, 105);
+   background-color: #fcfcfc;
    margin-bottom: 20px;
 }
 
