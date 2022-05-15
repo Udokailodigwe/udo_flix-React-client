@@ -103,14 +103,15 @@
 }
 
 h1 {
-  color: white;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .main-div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #8c6269;
+  background-color: #fcfcfc;
   margin-bottom: 20px;
 }
 
