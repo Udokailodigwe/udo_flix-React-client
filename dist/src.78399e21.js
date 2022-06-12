@@ -56253,7 +56253,7 @@ function LoginView(props) {
   }, " Don't have an account?", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/register",
     className: "register-link"
-  }, " Register Here"))))));
+  }, " Sign-up "))))));
 }
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -58865,7 +58865,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60143" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64565" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
