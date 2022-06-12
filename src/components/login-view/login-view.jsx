@@ -79,8 +79,8 @@ export function LoginView(props) {
                                 Login
                             </button >
                         </div>
-                        <p className="text-center" > Don't have an account?
-                            <Link to="/register" className="register-link"> Register Here</Link>
+                        <p className="text-center" > Don't have an account? 
+                            <Link to="/register" className="register-link"> Sign-up </Link>
                         </p>
                     </Col>
                 </Form>
