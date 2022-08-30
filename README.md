@@ -44,7 +44,6 @@ I also want to have the freedom to update my profile, see my favorite movie dire
 </br>
 <li>React</li>
 <li>Redux</li>
-<li>Axios</li>
 <li>ReactBootstrap</li>
 </br>
 
